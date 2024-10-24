@@ -1,14 +1,13 @@
 // Find all our documentation at https://docs.near.org
-import { NearBindgen, near, call, view } from 'near-sdk-js';
+import { NearBindgen, near, call, view } from "near-sdk-js";
 
 @NearBindgen({})
 class HelloNear {
-
   static schema = {
-    greeting: 'string'
+    greeting: "string",
   };
 
-  greeting: string = 'Hello';
+  greeting: string = "Hello";
 
   @view({}) // This method is read-only and can be called for free
   get_greeting(): string {
