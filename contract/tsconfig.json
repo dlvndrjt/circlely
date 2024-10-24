@@ -6,7 +6,9 @@
     "noImplicitAny": false,
   },
   "files": [
-    "src/contract.ts"
+    "src/contract.ts", 
+    "src/donation.ts",
+    "src/model.ts",  
   ],
   "exclude": [
     "node_modules"
