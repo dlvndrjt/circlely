@@ -1,11 +1,13 @@
 {
-  "name": "hello_near",
+  "name": "circlely_contracts",
   "version": "1.0.0",
+  "description": "Circlely contracts with near-sdk-js",
+  "author": "Dalvinderjit Singh",
   "license": "(MIT AND Apache-2.0)",
   "type": "module",
   "scripts": {
-    "build": "near-sdk-js build src/contract.ts build/hello_near.wasm",
-    "test": "$npm_execpath run build && ava -- ./build/hello_near.wasm"
+    "build": "near-sdk-js build src/contract.ts build/hello_near.wasm && near-sdk-js build src/donation.ts build/donation.wasm",
+    "test": "$npm_execpath run build && ava -- ./build/hello_near.wasm ./build/donation.wasm"
   },
   "dependencies": {
     "near-sdk-js": "2.0.0"
