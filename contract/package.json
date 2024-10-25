@@ -6,8 +6,12 @@
   "license": "(MIT AND Apache-2.0)",
   "type": "module",
   "scripts": {
-    "build": "near-sdk-js build src/contract.ts build/hello_near.wasm && near-sdk-js build src/donation.ts build/donation.wasm",
-    "test": "$npm_execpath run build && ava -- ./build/hello_near.wasm ./build/donation.wasm"
+    "build:hello_near": "near-sdk-js build src/contract.ts build/hello_near.wasm",
+    "build:donation": "near-sdk-js build src/donation.ts build/donation.wasm",
+    "build": "npm run build:hello_near && npm run build:donation",
+    "test:hello_near": "$npm_execpath run build && ava -- ./build/hello_near.wasm",
+    "test:donation": "$npm_execpath run build && ava -- ./build/donation.wasm",
+    "test": "npm run test:hello_near && npm run test:donation"
   },
   "dependencies": {
     "near-sdk-js": "2.0.0"
