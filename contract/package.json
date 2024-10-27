@@ -9,8 +9,8 @@
     "build:hello_near": "near-sdk-js build src/contract.ts build/hello_near.wasm",
     "build:donation": "near-sdk-js build src/donation.ts build/donation.wasm",
     "build": "npm run build:hello_near && npm run build:donation",
-    "test:hello_near": "$npm_execpath run build && ava -- ./build/hello_near.wasm",
-    "test:donation": "$npm_execpath run build && ava -- ./build/donation.wasm",
+    "test:hello_near": "$npm_execpath run build:hello_near && ava -- ./build/hello_near.wasm",
+    "test:donation": "$npm_execpath run build:donation && ava -- ./build/donation.wasm",
     "test": "npm run test:hello_near && npm run test:donation"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
   "ava": {
     "files": [
       "sandbox-test/*.ava.js"
-    ]
+    ],
+    "timeout": "30s"
   }
 }
